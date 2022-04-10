@@ -1,6 +1,9 @@
 #include <stdio.h>
 
-int main(void) //this is were the main program start run
+/*
+this is were the main program start run
+*/
+int main(void) 
 { 
 int a; 
 long int b; 
