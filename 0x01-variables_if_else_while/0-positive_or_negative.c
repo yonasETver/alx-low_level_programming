@@ -3,25 +3,24 @@
 #include <stdio.h>
 /**
  * The main method determine if a given rondom number is zero, negative, or posative 
- *
- * Return: 0 on success
  */
 int main(void)
 {
-	int rnum;
+	int n;
+	
 	srand(time(0));
-	rnum = rand() - RAND_MAX / 2;
-	if (rnum < 0)
+	n = rand() - RAND_MAX / 2;
+	if (n < 0)
 	{
-		printf("%d is %s\n", rnum, "negative number");
+		printf("%d is %s\n", n, "negative");
 	}
-	else if (rnum > 0)
+	else if (n > 0)
 	{
-		printf("%d is %s\n", rnum, "positive number ");
+		printf("%d is %s\n", n, "positive");
 	}
 	else
 	{
-		printf("%d is %s\n", rnum, "number zero");
+		printf("%d is %s\n", n, "zero");
 	}
 	return (0);
 
