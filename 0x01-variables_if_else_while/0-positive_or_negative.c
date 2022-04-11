@@ -2,7 +2,9 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * The main method determine if a given rondom number is zero, negative, or posative 
+ * main - Determine if a random number is positive, negative or zero.
+(*
+ * Return: 0 on success
  */
 int main(void)
 {
