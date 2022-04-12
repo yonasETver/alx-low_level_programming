@@ -9,7 +9,7 @@ int main(void)
 
 	i = sum = 0;
 	j = 1;
-  count = 0;
+	count = 0;
 	while (count < 50)
 	{
 		k = i + j;
@@ -19,7 +19,7 @@ int main(void)
 		{
 			sum += k;
 		}
-    count++;
+		count++;
 	}
 	printf("%lu\n", sum);
 	return (0);
