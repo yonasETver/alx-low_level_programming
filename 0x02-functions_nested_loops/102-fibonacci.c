@@ -22,7 +22,7 @@ int main(void)
 		{
 			printf(", ");
 		}
-                count++;
+		count++;
 	}
 	return (0);
 }
