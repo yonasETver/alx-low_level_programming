@@ -9,7 +9,7 @@ int main(void)
 
 	i = 0;
 	j = 1;
-        count = 0;
+	count = 0;
 	while (count < 50)
 	{
 		k = i + j;
@@ -22,7 +22,7 @@ int main(void)
 		{
 			printf(", ");
 		}
-        count++;
+                count++;
 	}
 	return (0);
 }
