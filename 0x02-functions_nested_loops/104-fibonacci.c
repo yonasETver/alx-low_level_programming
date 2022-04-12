@@ -12,14 +12,14 @@ int main(void)
 	count = 0;
 	i = 0;
 	j = 1;
-  count = 1;
-	for (count <= 91)
+	count = 1;
+	while (count <= 91)
 	{
 		k = i + j;
 		i = j;
 		j = k;
 		printf("%lu, ", k);
-    count++;
+		count++;
 	}
 	m = i % 1000;
 	i = i / 1000;
