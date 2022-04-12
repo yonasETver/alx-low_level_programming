@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * add - a function that sum two integers and returns the thire result
  * @num_one: first integer number input
