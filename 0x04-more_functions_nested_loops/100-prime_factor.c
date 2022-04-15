@@ -7,9 +7,8 @@
  */
 int main(void)
 {
-	unsigned long int i, n = 612852475143;
+	unsigned long int i = 3, n = 612852475143;
 	
-	i = 3;
 	while (i < 782849)
 	{
 		while ((n % i == 0) && (n != i))
