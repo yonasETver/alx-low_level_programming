@@ -2,17 +2,16 @@
 
 /**
  * print_numbers -  checks for checks for a digit (0 through 9).
- * @x: a variable 
+ *
  * Return: Always 0.
  */
 void print_numbers(void)
 {
-	int x = 48;
+	int a;
 
-	while (x < 58)
+	for (a = 48; a < 58; a++)
 	{
-		_putchar(x);
-		x++;
+		_putchar(a);
 	}
 	_putchar('\n');
 }
