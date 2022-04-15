@@ -7,7 +7,7 @@
 int main(void)
 {
 	int x;
-  x = 1;
+	x = 1;
 	while (x <= 100)
 	{
 		if (x % 3 == 0 || x % 5 == 0)
@@ -20,7 +20,7 @@ int main(void)
 			{
 				printf("Buzz");
 			}
-      x++;
+			x++;
 		}
 		else
 		{
