@@ -15,7 +15,7 @@ int main(void)
 		{
 			n = n / i;
 		}
-		i = i + 2
+		i = i + 2;
 	}
 	printf("%lu\n", n);
 	return (0);
