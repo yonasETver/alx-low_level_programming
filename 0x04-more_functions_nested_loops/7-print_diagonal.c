@@ -12,10 +12,10 @@ void print_diagonal(int n)
 
 	if (n > 0)
 	{
-    x = 1;
+		x = 1;
 		while (x <= n)
 		{
-      y = 1;
+			y = 1;
 			while (y <= n)
 			{
 				if (x == y)
@@ -23,11 +23,11 @@ void print_diagonal(int n)
 					_putchar(92);
 					break;
 				}
-				_putchar(' ');
-        y++;
+				_putchar(' '); 
+				y++;
 			}
 			_putchar('\n');
-      x++;
+			x++;
 		}
 	}
 	else
