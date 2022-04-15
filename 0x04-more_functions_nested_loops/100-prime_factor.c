@@ -8,6 +8,7 @@
 int main(void)
 {
 	unsigned long int i, n = 612852475143;
+	
 	i = 3;
 	while (i < 782849)
 	{
