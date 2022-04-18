@@ -15,9 +15,9 @@ srand(time(0));
 
 while (pass_w < 4040)
 {
-rand_num = rand() % 10;
-password[i] = seed_str[n];
-pass_w += password[i];
+  rand_num = rand() % 10;
+  password[i] = seed_str[rand_num];
+  pass_w += password[i];
   i++;
 }
 end = 4040 - pass_w;
