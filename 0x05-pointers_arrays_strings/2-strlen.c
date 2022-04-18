@@ -13,7 +13,7 @@ int _strlen(char *s)
     while (c != '\0')
     {
         len_count++;
-        c = s[i++]
+        c = s[i++];
     }
     return (len_count);
  }
