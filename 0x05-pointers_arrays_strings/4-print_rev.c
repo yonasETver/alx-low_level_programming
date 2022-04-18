@@ -3,7 +3,6 @@
 /**
  * print_rev - function prints a string, in reverse order
  * @s: used to count the string length
- * @counter: string variable
  */
 void print_rev(char *s)
 {
