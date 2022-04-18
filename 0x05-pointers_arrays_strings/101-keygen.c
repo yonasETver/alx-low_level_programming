@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-char seed_str[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@#*~?><&^?!";
+char seed_str[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 char password[15];
 int i = 0, rand_num, end,pass_w;
 
