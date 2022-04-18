@@ -5,22 +5,19 @@
  * str_len - used to count string length
  * @str: variable of string
  */
-void print_rev(char *str)
+void print_rev(char *s)
 {
-	int str_len = 0;
-	int i = 0, j;
+	int fcounter = 0;
+	int i, n;
 
-	while (str[i] != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		str_len++;
-		i++;
+		fcounter++;
 	}
-	j = str_len - 1;
 
-	while (j >= 0)
+	for (n = (fcounter - 1); n >= 0; n--)
 	{
-		_putchar(str[j]);
-		j--;
+		_putchar(s[n]);
 	}
 	_putchar('\n');
 }
