@@ -7,13 +7,13 @@
 
 int _strlen(char *s)
 {
-    int i = 1, len_count = 0;
-    char c = s[0];
+        int i = 1, len_count = 0;
+        char c = s[0];
     
-    while (c != '\0')
-    {
-        len_count++;
-        c = s[i++];
-    }
-    return (len_count);
+        while (c != '\0')
+        {
+            len_count++;
+            c = s[i++];
+        }
+        return (len_count);
 }
