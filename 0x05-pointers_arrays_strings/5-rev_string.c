@@ -18,7 +18,7 @@ void rev_string(char *str)
 	{
 		count_len--;
 		rev_str = str[i];
-		str[i] = s[count_len];
+		str[i] = str[count_len];
 		str[count_len] = rev_str;
 		i++;
 	}
