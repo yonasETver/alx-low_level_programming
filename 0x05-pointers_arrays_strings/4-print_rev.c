@@ -2,24 +2,24 @@
 
 /**
  * print_rev - function prints a string, in reverse order
- * str_len - used to count the string length
- * @str: string variable
+ * s - used to count the string length
+ * @counter: string variable
  */
-void print_rev(char *str)
+void print_rev(char *s)
 {
-	int str_len = 0;
+	int count = 0;
 
-	while (*str != '\0')
+	while (*s != '\0')
 	{
-		str_len++;
-		str++;
+		s++;
+		count++;
 	}
 
-	while (str_len > 0)
+	while (count > 0)
 	{
-		_putchar(*str);
-		str_len--;
-		str--;
+		s--;
+		_putchar(*s);
+		count--;
 	}
 	_putchar('\n');
 }
