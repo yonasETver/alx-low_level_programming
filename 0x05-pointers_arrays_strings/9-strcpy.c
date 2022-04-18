@@ -6,7 +6,7 @@
  * @char_org: original
  * Return: return the copied reference to the calling
  */
-char *_strcpy(char *char_org, char *char_copy)
+char *_strcpy(char *char_copy, char *char_org)
 {
 	int i = 0;
 
