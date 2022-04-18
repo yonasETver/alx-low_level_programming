@@ -8,7 +8,7 @@
 int main(void)
 {
 char seed_str[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@#*~?><&^?!";
-char password[18];
+char password[25];
 int i = 0, rand_num, end,pass_w;
 
 srand(time(0));
