@@ -15,7 +15,8 @@ void print_rev(char *str)
 		i++;
 	}
 
-	int j = (str_len - 1);
+	int j;
+	j = (str_len - 1);
 	
 	while (j >= 0)
 	{
