@@ -2,7 +2,7 @@
 
 /**
  * char *_strcpy - function copies the string value
- * @char_cop: copy of char_org
+ * @char_copy: copy of char_org
  * @char_org: original
  * Return: return the copied reference to the calling
  */
