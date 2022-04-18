@@ -3,6 +3,7 @@
 * _strlen - a function to count the length
 * @s: variable
 * Return: return the length to the calling function
+*/
 
 int _strlen(char *s)
 {
