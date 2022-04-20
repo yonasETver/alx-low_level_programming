@@ -19,7 +19,6 @@ char *cap_string(char *s)
 			if ((j == 0 || s[j - 1] == str_spc[i]) && (s[j] >= 97 && s[j] <= 122))
 				s[j] -= 32;
 		}
-
 		j++;
 	}
 
