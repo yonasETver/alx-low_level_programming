@@ -1,25 +1,22 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 
 /**
- * reverse_array - function reverse the content of string array.
- * @a: char variable
- * @n: integer variable
+ * reverse_array - check the code for Holberton School students.
+ * @a: is a pointer type char
+ * @n: is a pointer type char
  * Return: Always 0.
  *
  */
 void reverse_array(int *a, int n)
 {
-	int res[100];
-	int i = 0;
-	n--;
-	while (i <= n)
-	{
-		res[i] = a[i];
-		i++;
-	}
-	for (i = 0; i <= n; i++)
-	{
-		a[i] = res[n - i];
-	}
+int result[100];
+int i;
+n--;
+
+for (i = 0; i <= n; i++)
+result[i] = a[i];
+
+for (i = 0; i <= n; i++)
+a[i] = result[n - i];
 }
