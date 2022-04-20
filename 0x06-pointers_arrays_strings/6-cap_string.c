@@ -21,6 +21,5 @@ char *cap_string(char *s)
 		}
 		j++;
 	}
-
 	return (s);
 }
