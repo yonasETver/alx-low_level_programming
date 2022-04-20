@@ -5,6 +5,8 @@
  * reverse_array - function reverse the content of string array.
  * @a: char variable
  * @n: integer variable
+ * Return: Always 0.
+ *
  */
 void reverse_array(int *a, int n)
 {
