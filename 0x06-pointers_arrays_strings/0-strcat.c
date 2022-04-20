@@ -7,10 +7,9 @@
   * @dest: The destination string
   * Return: return the concatinated result
   */
-char *_strcat(char *dest, char *src, int n)
+char *_strcat(char *dest, char *src)
 {
-	int i = 0;
-	n = 0;
+	int i = 0, n = 0;
 
 	while (dest[n] != '\0')
 	{
