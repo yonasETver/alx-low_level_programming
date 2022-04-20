@@ -3,25 +3,26 @@
 
 /**
   * _strcat - function used to concatinate two string
-  * @orig: The source string
-  * @to_add: The destination string
+  * @src: The source string
+  * @dest: The destination string
   * Return: return the concatinated result
   */
-char *_strcat(char *to_add, char *orig)
+char *_strcat(char *dest, char *src, int n)
 {
-	int i = 0, count_len = 0;
+	int i = 0;
+	n = 0;
 
-	while (to_add[count_len] != '\0')
+	while (dest[n] != '\0')
 	{
-		count_len++;
+		n++;
 	}
 
-	for (; orig[i] != '\0'; i++)
+	for (; src[i] != '\0'; i++)
 	{
-		to_add[count_len] = orig[i];
-		count_len++;
+		dest[n] = src[i];
+		n++;
 	}
 
-	to_add[count_len] = '\0';
-	return (to_add);
+	dest[n] = '\0';
+	return (dest);
 }
