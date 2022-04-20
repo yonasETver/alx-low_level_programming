@@ -1,25 +1,37 @@
-#include <stdio.h>
 #include "main.h"
+#include <stdio.h>
 
 /**
-  * cap_string - a function that capitalizes all words of a string.
-  * @s: a string variable
-  * Return: return capitalizes string.
-  */
-char *cap_string(char *s)
+ * cap_string - check the code for Holberton School students.
+ * @a: is a pointer type char
+ * Return: Always 0.
+ *
+ */
+char *cap_string(char *a)
 {
-	int i = 0 , j = 0;
-	int cap_cspc = 13;
-	char str_spc[] = {32, '\t', '\n', 44, ';', 46, '!', '?', '"', '(', ')', '{', '}'};
+char separator[] = " \t\n,;.!?\"(){}";
+int i, j;
 
-	while (s[j])
-	{
-		for (; i < cap_cspc; i++)
-		{
-			if ((j == 0 || s[j - 1] == str_spc[i]) && (s[j] >= 97 && s[j] <= 122))
-				s[j] -= 32;
-		}
-		j++;
-	}
-	return (s);
+for (i = 0; a[i] != '\0'; i++)
+{
+
+if (a[i] >= 'a' && a[i] <= 'z')
+{
+
+if (i == 0)
+a[i] -= 32;
+
+
+else
+{
+for (j = 0; separator[j] != '\0'; j++)
+{
+if (a[i - 1] == separator[j])
+a[i] -= 32;
+}
+}
+
+}
+}
+return (a);
 }
