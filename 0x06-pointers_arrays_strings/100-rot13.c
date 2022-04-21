@@ -1,23 +1,23 @@
 #include "main.h"
 /**
- * rot13 - function that encodes a string using rot13. 
- * @s: a string variable
- * Return: the string cipher 
+ * rot13 - a function that encodes a string using rot13.
+ * @s: the string variable
+ * Return: ROT13 cipher
  */
 char *rot13(char *s)
 {
-	int i, j;
+	int i = 0, j;
 
-	char eng_alph[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char cor_rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char eng_alph[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char rot[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (; str[i] != '\0'; i++)
 	{
 		for (j = 0; eng_alph[j] != '\0'; j++)
 		{
 			if (s[i] == eng_alph[j])
 			{
-				s[i] = cor_rot[j];
+				s[i] = rot[j];
 				break;
 			}
 		}
