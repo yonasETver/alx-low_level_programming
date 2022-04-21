@@ -11,7 +11,7 @@ char *rot13(char *s)
 	char eng_alph[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char rot[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	for (; str[i] != '\0'; i++)
+	for (; s[i] != '\0'; i++)
 	{
 		for (j = 0; eng_alph[j] != '\0'; j++)
 		{
