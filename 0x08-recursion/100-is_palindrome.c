@@ -1,49 +1,50 @@
 #include "main.h"
 
 /**
- * check - Checker for the palindrome function
- * @s: String variable
- * @start: int variable
- * @end: int variable
- * @pair: int variable
- * Return: 0 or 1
+ * _strlen_recursion - size
+ * @s: pointer to string params
+ * Return: recursion
  */
 
-int check(char *s, int start, int end, int pair)
+int _strlen_recursion(char *s)
 {
-	if ((start == end && pair != 0) || (start == end + 1 && pair == 0))
-		return (1);
-	else if (s[start] != s[end])
+	if (!*s)
+	{
 		return (0);
-	else
-		return (check(s, start + 1, end - 1, pair));
+	}
+	return (1 + _strlen_recursion(++s));
 }
 
 /**
- * last_index - Returns the last index of a string (counts the null char)
- * @s: Pointer the string
- * Return: int
+ * p1 - palindrome
+ * @s: pointer to string
+ * @l: position
+ * Return: boolena
  */
 
-int last_index(char *s)
+int p1(char *s, int l)
 {
-	int n = 0;
+	if (l < 1)
+	{
+		return (1);
+	}
 
-	if (*s > '\0')
-		n += last_index(s + 1) + 1;
-
-	return (n);
+	if (*s == *(s + l))
+	{
+		return (p1(s + 1, l - 2));
+	}
+	return (0);
 }
 
 /**
- * is_palindrome - Check if a string is a palindrome
- * @s: String to check
- * Return: 0 or 1
+ * is_palindrome - palindrome
+ * @s: pointer to string
+ * Return: recursion
  */
 
 int is_palindrome(char *s)
 {
-	int end = last_index(s);
+	int len = _strlen_recursion(s);
 
-	return (check(s, 0, end - 1, end % 2));
+	return (p1(s, len - 1));
 }
