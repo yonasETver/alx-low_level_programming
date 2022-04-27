@@ -1,46 +1,30 @@
 #include "main.h"
 
-int tmp_prime(int n, int i);
-
 /**
- * divisors - number is prime?
- * @n: integer params
- * @m: integer params
- * Return: boolean
+ * sqrt_check - checks for the square root of c
+ * @g:guess at sqrt
+ * @c: number to find sqrt of
+ *
+ * Return: -1 or sqrt of c
  */
-
-int divisors(int n, int m);
-
-/**
- * is_prime_number -a function that returns 1 if the input integer is a prime number, otherwise return 0
- * @n: integer params
- * Return: recursion
- */
-
-int is_prime_number(int n)
+int sqrt_check(int g, int c)
 {
-	if ((!(n % 2) && n != 2) || n < 2)
-	{
-		return (0);
-	}
-	else
-	{
-		return (divisors(3, n));
-	}
+	if (g * g == c)
+		return (g);
+	if (g * g > c)
+		return (-1);
+	return (sqrt_check(g + 1, c));
 }
 
-int divisors(int n, int m);
+/**
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n: integer to find sqrt of
+ *
+ * Return: natural square root or -1
+ */
+int _sqrt_recursion(int n)
 {
-	if (m % n == 0)
-	{
+	if (n == 0)
 		return (0);
-	}
-	else if (m / 2 > n)
-	{
-		return (divisors(n + 2, m));
-	}
-	else
-	{
-		return (1);
-	}
+	return (sqrt_check(1, n));
 }
