@@ -1,70 +1,101 @@
 #include <stdlib.h>
-#include <stdio.h> 
 
+/**
+ * wordcount - get word count from string
+ *             without spaces
+ *
+ * @str: string to count words present
+ *
+ * Return: The number of words
+*/
 
-char **add_new(char** old, char *new_str, unsigned int old_size)
+int wordcount(char *str)
 {
-	
+	int words = 0;
+
+	while (*str != '\0')
+	{
+		/*skip spaces*/
+		if (*str == ' ')
+			str++;
+		else
+		{
+			/*count words*/
+			while (*str != ' ' && *str != '\0')
+				str++;
+			words++;
+		}
+	}
+	return (words);
 }
+
+/**
+ * free_array - free arr[i]
+ *
+ * @ar: array to free
+ * @i: array[i]
+ *
+ * Return: nothing
+*/
+
+void free_array(char **ar, int i)
+{
+	if (ar != NULL && i != 0)
+	{
+		while (i >= 0)
+		{
+			free(ar[i]);
+			i--;
+		}
+		free(ar);
+	}
+}
+
+/**
+ * strtow - split a string to words
+ *
+ * @str: string to split.
+ *
+ * Return: NULL if it fails
+*/
 
 char **strtow(char *str)
 {
-	char **result;
-	unsigned int size;
-	char *new_str;
-	int idx, start, end, mx, count;
+	int i, s, j, str_l, word;
+	char **string;
 
-	start = -1;
-	end = -1;
+	if (str == NULL || *str == '\0')
+		return (NULL);
 
-	if (str == NULL || str == "")
-	 	return (NULL);
+	str_l = wordcount(str);
+	/*return null if str_l == 0 || new == NULL*/
+	string = malloc((str_l + 1) * sizeof(char *));
+	if (str_l == 0 || string == NULL)
+		return (NULL);
 
-
-	for (idx = 0; *(str + idx) != '\0'; idx++)
+	for (i = s = 0; i < str_l; i++)
 	{
-		if (start == -1)
+		for (word = s; str[word] != '\0'; word++)
 		{
-			if (*(str + idx) != ' ')
-				start = idx;
-		}
+			if (str[word] == ' ')
+				s++;
 
-		else
-		{
-			if (*(str + idx) == ' ' || *(str + idx + 1) == '\0' )
+			if (str[word] != ' ' && (str[word + 1] == ' ' || str[word + 1] == '\0'))
 			{
-				end = idx;
-
-				if (*(str + idx + 1) == '\0')
-					end += 1;
-
-				new_str = malloc(end - start + 1);
-
-
-				for (mx = start, count = 0; mx < end; mx++, count++)
+				string[i] = malloc((word - s + 2) * sizeof(char));
+				if (string[i] == NULL)
 				{
-					new_str[count] = str[mx];
+					free_array(string, i);
+					return (NULL);
 				}
-
-				new_str[count] = 0;
-
-				
-
-				start = -1;
-				end = -1;
+				break;
 			}
-
-			
-
 		}
+
+		for (j = 0; s <= word; s++, j++)
+			string[i][j] = str[s];
+		string[i][j] = '\0';
 	}
-	
-
-}
-
-int main()
-{
-	strtow(" mama i just killed a man");
-
-	return (0);
+	string[i] = NULL;
+	return (string);
 }
