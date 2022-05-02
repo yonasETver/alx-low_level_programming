@@ -13,32 +13,24 @@ char **strtow(char *str)
 	char **f, *col;
 
 	if (!str || !*str)
-	{
 		return (NULL);
-	}
 
 	for (; *(str + i); i++)
 	{
 		if (*(str + i) != ' ')
 		{
 			if (*(str + i + 1) == ' ' || *(str + i + 1) == 0)
-			{
 				count += 1;
-			}
 		}
 	}
 
 	if (count == 0)
-	{
 		return (NULL);
-	}
 	count += 1;
 	f = malloc(sizeof(char *) * count);
 
 	if (!f)
-	{
 		return (NULL);
-	}
 	i = 0;
 
 	while (*str)
