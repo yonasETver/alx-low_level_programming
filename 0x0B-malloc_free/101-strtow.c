@@ -1,69 +1,66 @@
-#include "main.h"
-#include <stdlib.h>
+#include "holberton.h"
 
 /**
- * ch_free_grid - frees a 2 dimensional array.
- * @grid: multidimensional array of char.
- * @height: height of the array.
+ * _isspace - check if a character is whitespace
+ * @c: the character to check
  *
- * Return: no return
+ * Return: 1 is c is a whitespace character, otherwise 0
  */
-void ch_free_grid(char **grid, unsigned int height)
+int _isspace(int c)
 {
-	if (grid != NULL && height != 0)
-	{
-		for (; height > 0; height--)
-			free(grid[height]);
-		free(grid[height]);
-		free(grid);
-	}
+	if (c == 0x20 || (c >= 0x09 && c <= 0x0d))
+		return (1);
+	return (0);
 }
 
+
 /**
- * strtow - splits a string into words.
- * @str: string.
+ * strtow - split a string into words
+ * @str: a pointer to the string to split
  *
- * Return: pointer of an array of integers
+ * Return: NULL if memory allocation fails or if str is NULL or empty (""),
+ * otherwise return a pointer to the array of words terminated by a NULL
  */
 char **strtow(char *str)
 {
-	char **aout;
-	unsigned int c, height, i, j, a1;
+	char **words, *pos = str;
+	int w = 0, c;
 
-	if (str == NULL || *str == '\0')
+	if (!(str && *str))
 		return (NULL);
-	for (c = height = 0; str[c] != '\0'; c++)
-	{
-		if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
-			height++;
-	}
-	aout = malloc((height + 1) * sizeof(char *));
-	if (aout == NULL || height == 0)
-	{
-		free(aout);
+	do {
+		while (_isspace(*pos))
+			++pos;
+		if (!*pos)
+			break;
+		while (*(++pos) && !_isspace(*pos))
+			;
+	} while (++w, *pos);
+	if (!w)
 		return (NULL);
-	}
-	for (i = a1 = 0; i < height; i++)
-	{
-		for (c = a1; str[c] != '\0'; c++)
+	words = (char **) malloc(sizeof(char *) * (w + 1));
+	if (!words)
+		return (NULL);
+	w = 0, pos = str;
+	do {
+		while (_isspace(*pos))
+			++pos;
+		if (!*pos)
+			break;
+		for (str = pos++; *pos && !_isspace(*pos); ++pos)
+			;
+		words[w] = (char *) malloc(sizeof(char) * (pos - str + 1));
+		if (!words[w])
 		{
-			if (str[c] == ' ')
-				a1++;
-			if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
-			{
-				aout[i] = malloc((c - a1 + 2) * sizeof(char));
-				if (aout[i] == NULL)
-				{
-					ch_free_grid(aout, i);
-					return (NULL);
-				}
-				break;
-			}
+			while (w >  0)
+				free(words[--w]);
+			free(words);
+			return (NULL);
 		}
-		for (j = 0; a1 <= c; a1++, j++)
-			aout[i][j] = str[a1];
-		aout[i][j] = '\0';
-	}
-	aout[i] = NULL;
-	return (aout);
+		for (c = 0; str < pos; ++c, ++str)
+			words[w][c] = *str;
+		words[w][c] = '\0';
+	} while (++w, *pos);
+	words[w] = NULL;
+	return (words);
 }
