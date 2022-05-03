@@ -1,5 +1,4 @@
 #include <stdlib.h>
-
 /**
  * wordcount - get word count from string
  *             without spaces
