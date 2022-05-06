@@ -1,54 +1,42 @@
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
-
 /**
- * _isdigit - checks digit
- *
- * @s: string to check
- *
- * Return: 1 if digit, 0 if not
- */
-int _isdigit(char *s)
+* string_nconcat - prints concatenate string;
+* @s1: input string.
+* @s2: input string.
+* @n: len s2 string for print.
+* Return: Nothing.
+*/
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-int count = 0;
+	unsigned int l1, i, e;
+	char *a;
 
-while (*(s + count))
-{
-if (*(s + count) > '9' || *(s + count) < '0')
-return (0);
-count++;
-}
-return (1);
-}
+	if (s1 == NULL)
+		s1 = "";
 
-/**
- * main - prints multiple of to numbers
- *
- * @argc: number of argument
- * @argv: arguments passed
- *
- * Return: 0 on success
- */
-int main(int argc, char *argv[])
-{
-char num1, num2;
-unsigned int res;
+	if (s2 == NULL)
+		s2 = "";
+	l1 = 0;
+	while (s1[l1])
+		l1++;
 
-if (argc != 3)
-{
-printf("Error\n");
-exit(98);
-}
+	a = malloc(sizeof(*a) * l1 + n + 1);
 
-if (!_isdigit(argv[1]) || !_isdigit(argv[2]))
-{
-printf("Error\n");
-exit(98);
-}
+	if (a == NULL)
+		return (NULL);
 
-num1 = atoi(argv[1]);
-num2 = atoi(argv[2]);
-res = num1 * num2;
-printf("%d\n", res);
-return (0);
+	for (i = 0, e = 0; i < (l1 + n); i++)
+	{
+		if (i < l1)
+		{
+			a[i] = s1[i];
+		}
+		else
+		{
+			a[i] = s2[e++];
+		}
+	}
+	a[i] = '\0';
+	return (a);
 }
