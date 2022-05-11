@@ -4,8 +4,11 @@
 
 /**
  * main - Entry point
+ *
  * @argc: length of command line arguments
+ *
  * @argv: double pointer to cli arguments
+ *
  * Return: 0
  */
 
