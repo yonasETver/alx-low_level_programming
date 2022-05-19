@@ -9,15 +9,17 @@
 size_t print_list(const list_t *h)
 {
 	size_t i = 0;
+	const list_t *tmp = h;
 
-	while (h)
+	for (i = 0; tmp; i++)
 	{
-		if (h->str == NULL)
+		if (tmp->str == NULL)
 			printf("[0] (nil)\n");
 		else
-			printf("[%u] %s\n", h->len, h->str);
-		h = h->next;
-		i++;
+		{
+			printf("[%d] %s\n", tmp->len, tmp->str);
+		}
+		tmp = tmp->next;
 	}
 	return (i);
 }
