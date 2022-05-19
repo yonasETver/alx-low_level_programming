@@ -1,12 +1,11 @@
 #include "lists.h"
-
 /**
- * *add_node_end - function adds a new node at the end 
- *@head: pointer to head
- *@str: string var
- *
- * Return: new node
- */
+* *add_node_end - function adds a new node at the end 
+*@head: pointer to head
+*@str: string var
+*
+* Return: new node
+*/
 
 list_t *add_node_end(list_t **head, const char *str)
 {
