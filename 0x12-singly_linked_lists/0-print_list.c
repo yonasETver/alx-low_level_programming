@@ -1,18 +1,17 @@
 #include "lists.h"
 
 /**
- * print_list - function prints all elements of list_t list
- *
- *@h: const list_t pointet to head of list
+ * print_list - a function that prints all the elements
+ *@h: pointer to head of list
  *
  * Return: number of nodes
  */
 
 size_t print_list(const list_t *h)
 {
-	int x;
+	int i = 0;
 
-	for (x = 0; h != NULL; x++)
+	for (;h != NULL; i++)
 	{
 		if (h->str == NULL)
 		{
@@ -24,5 +23,5 @@ size_t print_list(const list_t *h)
 		}
 		h = h->next;
 	}
-	return (x);
+	return (i);
 }
