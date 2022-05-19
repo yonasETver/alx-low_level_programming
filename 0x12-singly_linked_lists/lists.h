@@ -1,17 +1,18 @@
 #ifndef LISTS_H
 #define LISTS_H
+#include<stdio.h>
+#include<stdlib.h>
 #include<stddef.h>
 #include<stdarg.h>
 #include<string.h>
-#include<stdio.h>
-#include<stdlib.h>
+
 
 /**
- * struct list_s - singly linked list structure 
- * @str: the data part of the linked lost
- * @len: length of the string
- * @next: points part for the next node 
- */
+* struct list_s - singly linked list structure 
+* @str: the data part of the linked lost
+* @len: length of the string
+* @next: points part for the next node 
+*/
 typedef struct list_s
 {
 	char *str;
