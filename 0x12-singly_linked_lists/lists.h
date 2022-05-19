@@ -10,6 +10,7 @@
 * @str: the data part of the linked lost
 * @len: length of the string
 * @next: points part for the next node 
+* Description: singly linked list node structure
 */
 typedef struct list_s
 {
