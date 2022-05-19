@@ -1,7 +1,6 @@
 #include "lists.h"
-
 /**
-* print_list - a function that prints all the elements of a list_t list.
+* print_list - a function that prints elements of a list_t list.
 * @h: linked list structure
 * Return: number of nodes of the linked list
 */
