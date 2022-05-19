@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "lists.h"
 
 /**
@@ -8,16 +9,16 @@
 
 size_t print_list(const list_t *h)
 {
-const list_t *cursor = h;
-size_t count = 0;
+	size_t num_of_nodes = 0;
 
-while (cursor != NULL)
-{
-if (cursor->str != NULL)
-printf("[%d] %s\n", cursor->len, cursor->str);
-else
-printf("[0] (nil)\n");
-count += 1;
-cursor = cursor->next;
+	while (h)
+	{
+		if (h->str == NULL)
+			printf("[0] (nil)\n");
+		else
+			printf("[%u] %s\n", h->len, h->str);
+		h = h->next;
+		num_of_nodes++;
+	}
+	return (num_of_nodes);
 }
-
