@@ -2,7 +2,7 @@
 
 /**
  * add_nodeint_end - adds a new node at the end
- * @head: Thead of the list
+ * @head: head of the list
  * @n: data part
  *
  * Return: new node
