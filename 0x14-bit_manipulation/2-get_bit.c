@@ -9,10 +9,10 @@
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	if (index >= sizeof(n) * BYTE_SIZE)
-	{
-		return (-1);
-	}
+	int bit;
 
-	return ((n >> index) & 1);
+	bit = (n >> index);
+	if (index > 32)
+	return (-1);
+	return (bit & 1);
 }
