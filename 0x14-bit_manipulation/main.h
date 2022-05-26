@@ -2,7 +2,7 @@
 #define MAIN_H
 #include <stdlib.h>
 #include <stdio.h>
-#define BYTE_LENGHT 8
+#define BYTE_SIZE 8
 
 /*
 * Function declaration
