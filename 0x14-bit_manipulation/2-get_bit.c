@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * set_bit - sets the value of a bit to 1 at a given index
- * @n: parameter
+ * get_bit - value of a bit at a given index
+ * @n: decimal parameter
  * @index: index
- * Return: 1 or -1
+ * Return: val
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
