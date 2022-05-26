@@ -1,12 +1,10 @@
 #include "main.h"
-
 /**
- * get_bit - returns the value of a bit at a given index.
- * @n: long int parameter 
- * @index: parameter for index
- * Return: the value of the bit
+ * set_bit - sets the value of a bit to 1 at a given index
+ * @n: parameter
+ * @index: index
+ * Return: 1 or -1
  */
-
 int get_bit(unsigned long int n, unsigned int index)
 {
 	int bit;
